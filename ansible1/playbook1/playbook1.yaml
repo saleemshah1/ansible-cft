@@ -15,8 +15,8 @@
         stack_name: "{{ stack_name }}"
         region: "{{ region }}"
         disable_rollback: true
-        state: present
-        template: "cfn2.yaml"
+        state: absent
+        template: "cfn1.yaml"
         template_parameters:
           KeyName: "{{ keypair }}"
           InstanceType: "{{ instance_type }}"
