@@ -1,0 +1,21 @@
+---
+- name: s3 bucket creation
+  hosts: localhost
+  gather_facts: false
+  connection: local
+  vars:
+   BucketName: Saleem-aws-ansible
+   stack_name: s3-stack1
+   region: eu-west-1
+  tasks:
+  - name: create cft stack
+    cloudformation:
+      stack_name: "{{stack_name}}"
+      region: "{{region}}"
+      disable_rollback: false
+      state: present
+      template: cfn2.yaml
+
+
+
+

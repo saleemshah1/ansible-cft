@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Setup test environment with EC2 instances
+Parameters:
+  BucketName:
+    Description: S3 Bucket Name
+    Type: String
+    Default: saleem-bucket-ansible
+Resources:
+  S3Bucket:
+    Type: 'AWS::S3::Bucket'
+    DeletionPolicy: Retain
+    Properties:
+     BucketName: !Ref BucketName
+
+
